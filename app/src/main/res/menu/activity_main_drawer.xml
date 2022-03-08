@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_matches"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/menu_last_matches" />
+        <item
+            android:id="@+id/nav_legends"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/menu_legends" />
+        <item
+            android:id="@+id/nav_weapons"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/menu_weapons" />
+    </group>
+</menu>

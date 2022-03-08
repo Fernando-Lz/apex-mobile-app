@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Apex Stats</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Username</string>
+    <string name="nav_header_subtitle">email@example.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Drawer Activity String -->
+    <string name="menu_home">Home</string>
+    <string name="menu_last_matches">Last Matches</string>
+    <string name="menu_legends">Legends</string>
+    <string name="menu_weapons">Weapons</string>
+    <string name="menu_logout">Logout</string>
+
+    <!-- Accessibility Strings -->
+    <string name="apex_logo">Apex Legends Logo</string>
+</resources>
