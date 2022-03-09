@@ -24,8 +24,8 @@ public class WeaponsFragment extends Fragment{
         binding = FragmentWeaponsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textWeapons;
-        legendsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+//        final TextView textView = binding.textWeapons;
+//        legendsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
