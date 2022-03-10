@@ -6,10 +6,9 @@
     android:layout_height="match_parent"
     app:alignmentMode="alignMargins"
     app:orientation="horizontal"
-    app:columnCount="2"
-    app:rowCount="2">
+    app:columnCount="2">
 
-    <!-- User Information -->
+    <!-- USER INFORMATION -->
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,34 +20,72 @@
         app:layout_columnSpan="2">
 
         <LinearLayout
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="16dp"
-            android:gravity="center">
+            android:gravity="left"
+            android:background="@drawable/stats_gradient">
 
             <ImageView
-                android:src="@drawable/wingman_icon"
+                android:src="@drawable/apex_logo"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:contentDescription="Wingman Image">
+                android:contentDescription="Wingman Image"
+                android:layout_marginRight="20dp">
             </ImageView>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Wingman"
-                android:textColor="@color/black"
-                android:textSize="18sp">
+            <LinearLayout
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
 
-            </TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="StringentAbyss"
+                    android:textColor="#FFF"
+                    android:textSize="18sp">
+                </TextView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lv. 249"
+                    android:textColor="#FFF"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="20dp">
+                </TextView>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Percentage to next level"
+                    android:textColor="#FFF"
+                    android:textSize="18sp">
+                </TextView>
+
+
+
+                <ProgressBar
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:progress="75"
+                    >
+                </ProgressBar>
+
+            </LinearLayout>
+
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
 
-
+    <!--  RANKS CLASSIFICATION INFORMATION  -->
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -57,7 +94,7 @@
         app:cardBackgroundColor="@color/white"
         app:layout_columnWeight="1"
         app:layout_rowWeight="1"
-        app:layout_column="0">
+        app:layout_gravity="fill">
 
         <LinearLayout
             android:orientation="vertical"
@@ -94,8 +131,7 @@
         android:layout_margin="12dp"
         app:cardBackgroundColor="@color/white"
         app:layout_columnWeight="1"
-        app:layout_rowWeight="1"
-        app:layout_column="1">
+        app:layout_rowWeight="1">
 
         <LinearLayout
             android:orientation="vertical"
@@ -108,22 +144,22 @@
                 android:src="@drawable/rank"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:contentDescription="Rank Image">
+                android:contentDescription="Rank image">
             </ImageView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textAlignment="center"
                 android:text="Arena Rank"
                 android:textColor="@color/black"
                 android:textSize="18sp">
-
             </TextView>
-
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
+    <!--  LAST LEGEND PLAYED INFORMATION  -->
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -137,30 +173,54 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
             android:padding="16dp">
 
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:contentDescription="Rank Image"
-                android:src="@drawable/rank">
-
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:contentDescription="Bloodhound image"
+                android:layout_marginTop="-60px"
+                android:layout_marginLeft="-60px"
+                android:src="@drawable/bloodhound">
             </ImageView>
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Arena Rank"
-                android:textColor="@color/black"
-                android:textSize="18sp">
+                android:orientation="vertical"
+                android:gravity="left"
+                android:layout_marginLeft="60px">
 
-            </TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kills: 232"
+                    android:textSize="18sp"
+                    android:textColor="@color/black">
+                </TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wins: 52"
+                    android:textSize="18sp"
+                    android:textColor="@color/black">
+                </TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Damage Done: 120000"
+                    android:textSize="18sp"
+                    android:textColor="@color/black">
+                </TextView>
+
+            </LinearLayout>
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
 
 </androidx.gridlayout.widget.GridLayout>
 
