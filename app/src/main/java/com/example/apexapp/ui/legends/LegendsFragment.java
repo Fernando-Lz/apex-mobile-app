@@ -24,8 +24,8 @@ public class LegendsFragment extends Fragment {
         binding = FragmentLegendsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textLegends;
-        legendsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+//        final TextView textView = binding.textLegends;
+//        legendsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

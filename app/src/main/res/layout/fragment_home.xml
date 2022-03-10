@@ -62,7 +62,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Percentage to next level"
+                    android:text="Progress to next level"
                     android:textColor="#FFF"
                     android:textSize="18sp">
                 </TextView>
@@ -165,7 +165,7 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="12dp"
         android:layout_margin="12dp"
-        app:cardBackgroundColor="@color/white"
+        app:cardBackgroundColor="#535353"
         app:layout_columnWeight="1"
         app:layout_rowWeight="2"
         app:layout_columnSpan="2">
@@ -198,21 +198,21 @@
                     android:layout_height="wrap_content"
                     android:text="Kills: 232"
                     android:textSize="18sp"
-                    android:textColor="@color/black">
+                    android:textColor="@color/white">
                 </TextView>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Wins: 52"
                     android:textSize="18sp"
-                    android:textColor="@color/black">
+                    android:textColor="@color/white">
                 </TextView>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Damage Done: 120000"
                     android:textSize="18sp"
-                    android:textColor="@color/black">
+                    android:textColor="@color/white">
                 </TextView>
 
             </LinearLayout>
