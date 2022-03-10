@@ -1,22 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.gridlayout.widget.GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    app:alignmentMode="alignMargins"
+    app:orientation="horizontal"
+    app:columnCount="2"
+    app:rowCount="2">
 
-    <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
+    <!-- User Information -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:cardCornerRadius="12dp"
+        android:layout_margin="12dp"
+        app:cardBackgroundColor="@color/white"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="0"
+        app:layout_columnSpan="2">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:gravity="center">
+
+            <ImageView
+                android:src="@drawable/wingman_icon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:contentDescription="Wingman Image">
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wingman"
+                android:textColor="@color/black"
+                android:textSize="18sp">
+
+            </TextView>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        android:layout_margin="12dp"
+        app:cardBackgroundColor="@color/white"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1"
+        app:layout_column="0">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:gravity="center">
+
+            <ImageView
+                android:src="@drawable/rank"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:contentDescription="Rank image">
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="BR Rank"
+                android:textColor="@color/black"
+                android:textSize="18sp">
+
+            </TextView>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        android:layout_margin="12dp"
+        app:cardBackgroundColor="@color/white"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1"
+        app:layout_column="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:gravity="center">
+
+            <ImageView
+                android:src="@drawable/rank"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:contentDescription="Rank Image">
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Arena Rank"
+                android:textColor="@color/black"
+                android:textSize="18sp">
+
+            </TextView>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        android:layout_margin="12dp"
+        app:cardBackgroundColor="@color/white"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="2"
+        app:layout_columnSpan="2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:contentDescription="Rank Image"
+                android:src="@drawable/rank">
+
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Arena Rank"
+                android:textColor="@color/black"
+                android:textSize="18sp">
+
+            </TextView>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.gridlayout.widget.GridLayout>
+

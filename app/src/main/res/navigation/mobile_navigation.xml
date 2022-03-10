@@ -9,24 +9,64 @@
         android:id="@+id/nav_home"
         android:name="com.example.apexapp.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_weapons"
+            app:destination="@id/nav_weapons" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_legends"
+            app:destination="@id/nav_legends" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_matches"
+            app:destination="@id/nav_matches" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_legends"
         android:name="com.example.apexapp.ui.legends.LegendsFragment"
         android:label="@string/menu_legends"
-        tools:layout="@layout/fragment_legends" />
+        tools:layout="@layout/fragment_legends" >
+        <action
+            android:id="@+id/action_nav_legends_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_legends_to_nav_matches"
+            app:destination="@id/nav_matches" />
+        <action
+            android:id="@+id/action_nav_legends_to_nav_weapons"
+            app:destination="@id/nav_weapons" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_weapons"
         android:name="com.example.apexapp.ui.weapons.WeaponsFragment"
         android:label="@string/menu_weapons"
-        tools:layout="@layout/fragment_weapons" />
+        tools:layout="@layout/fragment_weapons" >
+        <action
+            android:id="@+id/action_nav_weapons_to_nav_legends"
+            app:destination="@id/nav_legends" />
+        <action
+            android:id="@+id/action_nav_weapons_to_nav_matches"
+            app:destination="@id/nav_matches" />
+        <action
+            android:id="@+id/action_nav_weapons_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_matches"
         android:name="com.example.apexapp.ui.matches.MatchesFragment"
         android:label="@string/menu_last_matches"
-        tools:layout="@layout/fragment_matches" />
+        tools:layout="@layout/fragment_matches" >
+        <action
+            android:id="@+id/action_nav_matches_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_matches_to_nav_legends"
+            app:destination="@id/nav_legends" />
+        <action
+            android:id="@+id/action_nav_matches_to_nav_home2"
+            app:destination="@id/nav_home" />
+    </fragment>
 
 </navigation>

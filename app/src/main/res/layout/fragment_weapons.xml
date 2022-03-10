@@ -9,8 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:alignmentMode="alignMargins"
-        android:columnCount="2"
-        android:isScrollContainer="true">
+        android:columnCount="2">
 
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
