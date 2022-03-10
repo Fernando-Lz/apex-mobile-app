@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/login">
 
     <fragment
         android:id="@+id/nav_home"
@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_nav_home_to_nav_legends"
             app:destination="@id/nav_legends" />
+        <action
+            android:id="@+id/action_nav_home_to_login"
+            app:destination="@id/login" />
     </fragment>
 
     <fragment
@@ -29,6 +32,9 @@
         <action
             android:id="@+id/action_nav_legends_to_nav_weapons"
             app:destination="@id/nav_weapons" />
+        <action
+            android:id="@+id/action_nav_legends_to_login"
+            app:destination="@id/login" />
     </fragment>
 
     <fragment
@@ -41,6 +47,19 @@
             app:destination="@id/nav_legends" />
         <action
             android:id="@+id/action_nav_weapons_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_weapons_to_login"
+            app:destination="@id/login" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/login"
+        android:name="com.example.apexapp.ui.login.LoginFragment"
+        android:label="@string/menu_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_nav_home"
             app:destination="@id/nav_home" />
     </fragment>
 
