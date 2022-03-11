@@ -1,4 +1,4 @@
-package com.example.apexapp.ui.weapons;
+package com.example.apexapp.ui;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,8 +18,6 @@ public class WeaponsFragment extends Fragment{
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        WeaponsViewModel legendsViewModel =
-                new ViewModelProvider(this).get(WeaponsViewModel.class);
 
         binding = FragmentWeaponsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -27,6 +25,10 @@ public class WeaponsFragment extends Fragment{
 //        final TextView textView = binding.textWeapons;
 //        legendsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
+    }
+
+    public void showAllWeapons() {
+
     }
 
     @Override

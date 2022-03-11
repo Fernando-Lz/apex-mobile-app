@@ -1,4 +1,4 @@
-package com.example.apexapp.ui.legends;
+package com.example.apexapp.ui;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,8 +18,6 @@ public class LegendsFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        LegendsViewModel legendsViewModel =
-                new ViewModelProvider(this).get(LegendsViewModel.class);
 
         binding = FragmentLegendsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -27,6 +25,10 @@ public class LegendsFragment extends Fragment {
 //        final TextView textView = binding.textLegends;
 //        legendsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
+    }
+
+    public void showAllLegends() {
+
     }
 
     @Override

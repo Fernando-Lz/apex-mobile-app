@@ -10,12 +10,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="296dp"
-        android:layout_marginBottom="318dp"
+        android:layout_marginEnd="294dp"
+        android:layout_marginBottom="366dp"
         android:text="Username:"
         android:textColor="@color/black"
-        android:textSize="18sp">
-    </TextView>
+        android:textSize="18sp"></TextView>
 
     <EditText
         android:layout_width="wrap_content"
@@ -23,28 +22,26 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="143dp"
+        android:layout_marginStart="145dp"
         android:layout_marginTop="-45dp"
-        android:layout_marginEnd="57dp"
-        android:layout_marginBottom="307dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="351dp"
+        android:autofillHints="false"
         android:ems="10"
         android:hint="xXExampleXx"
-        android:autofillHints="false"
-        android:padding="12dp"
-        android:inputType="text">
-    </EditText>
+        android:inputType="text"
+        android:padding="12dp"></EditText>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="296dp"
-        android:layout_marginBottom="249dp"
+        android:layout_marginEnd="294dp"
+        android:layout_marginBottom="296dp"
         android:text="Password:"
         android:textColor="@color/black"
-        android:textSize="18sp">
-    </TextView>
+        android:textSize="18sp"></TextView>
 
     <EditText
         android:layout_width="wrap_content"
@@ -52,14 +49,38 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="144dp"
-        android:layout_marginEnd="57dp"
-        android:layout_marginBottom="239dp"
+        android:layout_marginStart="145dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="219dp"
+        android:autofillHints="password"
         android:ems="10"
         android:inputType="textPassword"
-        android:padding="12dp"
-        android:autofillHints="password">
-    </EditText>
+        android:padding="12dp"></EditText>
+
+    <TextView
+        android:layout_width="123dp"
+        android:layout_height="42dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="256dp"
+        android:layout_marginBottom="223dp"
+        android:text="Repeat Password:"
+        android:textColor="@color/black"
+        android:textSize="18sp"></TextView>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="145dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="285dp"
+        android:autofillHints="password"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:padding="12dp"></EditText>
 
     <Button
         android:layout_width="wrap_content"
@@ -67,12 +88,11 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:padding="10dp"
-        android:layout_marginStart="162dp"
+        android:layout_marginStart="161dp"
         android:layout_marginEnd="162dp"
-        android:layout_marginBottom="156dp"
-        android:text="Login">
-    </Button>
+        android:layout_marginBottom="94dp"
+        android:padding="10dp"
+        android:text="Sign Up"></Button>
 
     <ImageView
         android:id="@+id/imageView2"
@@ -85,12 +105,12 @@
         app:srcCompat="@drawable/apex_legends_logo" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="131dp"
-        android:layout_marginBottom="103dp"
-        android:text="New user? Sign up here" />
+        android:layout_marginEnd="114dp"
+        android:layout_marginBottom="57dp"
+        android:text="Have an account? Log in here" />
 </RelativeLayout>

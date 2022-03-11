@@ -1,4 +1,4 @@
-package com.example.apexapp.ui.login;
+package com.example.apexapp.ui;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,13 +17,15 @@ public class LoginFragment extends Fragment{
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        LoginViewModel loginViewModel =
-                new ViewModelProvider(this).get(LoginViewModel.class);
 
         binding = FragmentLoginBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         return root;
+    }
+
+    public void verifyCredentials() {
+
     }
 
     @Override

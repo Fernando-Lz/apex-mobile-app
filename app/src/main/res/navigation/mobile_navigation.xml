@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.apexapp.ui.home.HomeFragment"
+        android:name="com.example.apexapp.ui.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/nav_legends"
-        android:name="com.example.apexapp.ui.legends.LegendsFragment"
+        android:name="com.example.apexapp.ui.LegendsFragment"
         android:label="@string/menu_legends"
         tools:layout="@layout/fragment_legends" >
         <action
@@ -39,7 +39,7 @@
 
     <fragment
         android:id="@+id/nav_weapons"
-        android:name="com.example.apexapp.ui.weapons.WeaponsFragment"
+        android:name="com.example.apexapp.ui.WeaponsFragment"
         android:label="@string/menu_weapons"
         tools:layout="@layout/fragment_weapons" >
         <action
@@ -55,12 +55,26 @@
 
     <fragment
         android:id="@+id/login"
-        android:name="com.example.apexapp.ui.login.LoginFragment"
+        android:name="com.example.apexapp.ui.LoginFragment"
         android:label="@string/menu_login"
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_login_to_nav_home"
             app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_login_to_signup"
+            app:destination="@id/signup" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signup"
+        android:name="com.example.apexapp.ui.SignupFragment"
+        android:label="@string/menu_signup"
+        tools:layout="@layout/fragment_signup">
+
+        <action
+            android:id="@+id/action_signup_to_login"
+            app:destination="@id/login" />
     </fragment>
 
 </navigation>

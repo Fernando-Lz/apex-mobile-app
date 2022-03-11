@@ -1,4 +1,4 @@
-package com.example.apexapp.ui.home;
+package com.example.apexapp.ui;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,8 +18,6 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -27,6 +25,10 @@ public class HomeFragment extends Fragment {
 //        final TextView textView = binding.textHome;
 //        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
+    }
+
+    public void updateStats() {
+
     }
 
     @Override

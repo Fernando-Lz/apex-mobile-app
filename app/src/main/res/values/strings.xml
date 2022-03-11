@@ -10,6 +10,7 @@
     <!-- Drawer Activity String -->
     <string name="menu_home">Home</string>
     <string name="menu_login">Login</string>
+    <string name="menu_signup">Sign Up</string>
     <string name="menu_legends">Legends</string>
     <string name="menu_weapons">Weapons</string>
     <string name="menu_logout">Logout</string>
