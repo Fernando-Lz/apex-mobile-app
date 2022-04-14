@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "598177095487",
+    "firebase_url": "https://apexapp-1b575-default-rtdb.firebaseio.com",
+    "project_id": "apexapp-1b575",
+    "storage_bucket": "apexapp-1b575.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:598177095487:android:c6c4f1c340683f8a42bd8a",
+        "android_client_info": {
+          "package_name": "com.example.apexapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "598177095487-rtahbh6fgnpd9rbc2torcdbe5b9r69hk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuEIaqHsnqgjd5mg1wmUkT7UttDRiUDLs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "598177095487-rtahbh6fgnpd9rbc2torcdbe5b9r69hk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

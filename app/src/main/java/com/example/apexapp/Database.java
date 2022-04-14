@@ -4,11 +4,12 @@ import java.util.LinkedList;
 
 public class Database {
 
-    /*
-    public static boolean registerUser(String username, String password) {
 
+    public boolean registerUser(String username, String password) {
+        System.out.println("Hola");
+        return true;
     }
-
+    /*
     public static boolean userExists() {
 
     }
