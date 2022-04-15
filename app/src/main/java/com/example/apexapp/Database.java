@@ -1,51 +1,32 @@
 package com.example.apexapp;
 
-import androidx.annotation.NonNull;
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.FirebaseFirestore;
+public class Database{
+    // Creates the database instance
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class Database {
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-    public boolean registerUser(String username, String password) {
-        Map<String, Object> data = new HashMap<>();
-        data.put("username", username);
-        data.put("password", password);
-        data.put("platform", "PC");
-        db.collection("user").document().set(data).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-             if (task.isSuccessful()){
-                 System.out.println("Usuario registrado correctamente");
-             } else {
-                 System.out.println("Usuario no pudo ser registrado");
-             }
-            }
-        });
-        return true;
-    }
-    /*
-    public static boolean userExists() {
+    public static void registerUser(Context context, String username, String password) {
+        DatabaseHelper dbHelper;
+        SQLiteDatabase db;
+        ContentValues values;
+        //
+        dbHelper = new DatabaseHelper(context);
+        // DB in write mode
+        db = dbHelper.getWritableDatabase();
+        //
+        values = new ContentValues();
+        values.put("username", username);
+        values.put("password", password);
+        values.put("platform", "PC");
+        // Insert the row
+        db.insert("t_user", null, values);
+        Toast.makeText(Model.activity, "User created", Toast.LENGTH_SHORT).show();
 
     }
 
-    public static void updateStats() {
+    public void userExists(String username, String password){
     }
-
-    public static LinkedList<Weapon> selectAllWeapons() {
-
-    }
-
-    public static LinkedList<Legend> selectAllLegends() {
-
-    }
-
-
-    */
-
 }

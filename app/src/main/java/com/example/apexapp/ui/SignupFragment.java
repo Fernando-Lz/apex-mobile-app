@@ -1,12 +1,15 @@
 package com.example.apexapp.ui;
 
+
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,7 +18,9 @@ import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.apexapp.Database;
+import com.example.apexapp.Model;
 import com.example.apexapp.R;
+
 
 public class SignupFragment extends Fragment{
 
@@ -26,7 +31,6 @@ public class SignupFragment extends Fragment{
     EditText passwordEditText;
     EditText confirmPasswordEditText;
     Button signUpButton;
-    Database db = new Database();
 
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -54,6 +58,7 @@ public class SignupFragment extends Fragment{
 
     // Listeners
 
+    //Moves the user to the login fragment
     private void loginSetOnClickListener(View view){
         loginTextView = view.findViewById(R.id.loginTextView);
         loginTextView.setOnClickListener(new View.OnClickListener() {
@@ -70,25 +75,24 @@ public class SignupFragment extends Fragment{
 
     private void signUpButtonOnClickListener(View view){
         signUpButton = view.findViewById(R.id.signUpButton);
-        signUpButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String username = usernameEditText.getText().toString();
-                String password = passwordEditText.getText().toString();
-                String confirmPassword = confirmPasswordEditText.getText().toString();
+        signUpButton.setOnClickListener(v -> {
+            // Parse the data
+            String username = usernameEditText.getText().toString();
+            String password = passwordEditText.getText().toString();
+            String confirmPassword = confirmPasswordEditText.getText().toString();
 
-                if(password.equals(confirmPassword)){
-                    db.registerUser(username, password);
-                }
-
+            if (TextUtils.isEmpty(password) || TextUtils.isEmpty(username) || TextUtils.isEmpty(confirmPassword) && password.equals(confirmPassword )){
+                Toast.makeText(getContext(), "Check your information", Toast.LENGTH_SHORT).show();
+            } else {
+                Database.registerUser(Model.activity, username, password);
+                // Move to login fragment
+                NavController navController;
+                //
+                navController = NavHostFragment.findNavController(SignupFragment.this);
+                navController.navigate(R.id.action_signup_to_login);
             }
         });
     }
-
-    /*
-    private void createNewUser(View view) {
-
-    }*/
 
     @Override
     public void onDestroyView() {

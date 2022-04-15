@@ -10,14 +10,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="296dp"
-        android:layout_marginBottom="318dp"
+        android:layout_marginEnd="294dp"
+        android:layout_marginBottom="320dp"
         android:text="Username:"
         android:textColor="@color/black"
-        android:textSize="18sp">
-    </TextView>
+        android:textSize="18sp"></TextView>
 
     <EditText
+        android:id="@+id/usernameLoginEditText"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_alignParentStart="true"
@@ -27,12 +27,10 @@
         android:layout_marginTop="-45dp"
         android:layout_marginEnd="57dp"
         android:layout_marginBottom="307dp"
-        android:ems="10"
-        android:hint="xXExampleXx"
         android:autofillHints="false"
-        android:padding="12dp"
-        android:inputType="text">
-    </EditText>
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:padding="12dp"></EditText>
 
     <TextView
         android:layout_width="wrap_content"
@@ -47,6 +45,7 @@
     </TextView>
 
     <EditText
+        android:id="@+id/passwordLoginEditText"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_alignParentStart="true"
@@ -55,24 +54,23 @@
         android:layout_marginStart="144dp"
         android:layout_marginEnd="57dp"
         android:layout_marginBottom="239dp"
+        android:autofillHints="password"
         android:ems="10"
         android:inputType="textPassword"
-        android:padding="12dp"
-        android:autofillHints="password">
-    </EditText>
+        android:padding="12dp"></EditText>
 
     <Button
+        android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:padding="10dp"
         android:layout_marginStart="162dp"
         android:layout_marginEnd="162dp"
         android:layout_marginBottom="156dp"
-        android:text="Login">
-    </Button>
+        android:padding="10dp"
+        android:text="Login"></Button>
 
     <ImageView
         android:id="@+id/imageView2"
