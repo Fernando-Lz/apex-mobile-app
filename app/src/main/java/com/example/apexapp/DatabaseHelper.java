@@ -6,11 +6,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "apex.db";
-    public static final String TABLE_USER = "t_user";
-    public static final String TABLE_LEGEND = "t_legend";
-    public static final String TABLE_WEAPON = "t_weapon";
+    public static final String TABLE_USER = "user";
+    public static final String TABLE_LEGEND = "legend";
+    public static final String TABLE_WEAPON = "weapon";
+
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

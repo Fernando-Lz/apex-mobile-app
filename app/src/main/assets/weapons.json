@@ -1,0 +1,144 @@
+{
+  "weapons": [
+    {
+      "weaponId": "1",
+      "weaponName": "Havoc",
+      "weaponImgUrl": "/drawable/havoc.png"
+    },
+    {
+      "weaponId": "2",
+      "weaponName": "Flatline",
+      "weaponImgUrl": "/drawable/flatline.png"
+    },
+    {
+      "weaponId": "3",
+      "weaponName": "Hemlok",
+      "weaponImgUrl": "/drawable/hemlok.png"
+    },
+    {
+      "weaponId": "4",
+      "weaponName": "R-301",
+      "weaponImgUrl": "/drawable/r301.png"
+    },
+    {
+      "weaponId": "5",
+      "weaponName": "Alternator",
+      "weaponImgUrl": "/drawable/alternator.png"
+    },
+    {
+      "weaponId": "6",
+      "weaponName": "Prowler",
+      "weaponImgUrl": "/drawable/prowler.png"
+    },
+    {
+      "weaponId": "7",
+      "weaponName": "R-99",
+      "weaponImgUrl": "/drawable/r99.png"
+    },
+    {
+      "weaponId": "8",
+      "weaponName": "Volt",
+      "weaponImgUrl": "/drawable/volt.png"
+    },
+    {
+      "weaponId": "9",
+      "weaponName": "C.A.R.",
+      "weaponImgUrl": "/drawable/car.png"
+    },
+    {
+      "weaponId": "10",
+      "weaponName": "Devotion",
+      "weaponImgUrl": "/drawable/devotion.png"
+    },
+    {
+      "weaponId": "11",
+      "weaponName": "L-STAR",
+      "weaponImgUrl": "/drawable/lstar.png"
+    },
+    {
+      "weaponId": "12",
+      "weaponName": "Spirfire",
+      "weaponImgUrl": "/drawable/spitfire.png"
+    },
+    {
+      "weaponId": "13",
+      "weaponName": "Rampage",
+      "weaponImgUrl": "/drawable/rampage.png"
+    },
+    {
+      "weaponId": "14",
+      "weaponName": "G7 Scout",
+      "weaponImgUrl": "/drawable/scout.png"
+    },
+    {
+      "weaponId": "15",
+      "weaponName": "Triple Take",
+      "weaponImgUrl": "/drawable/tripletake.png"
+    },
+    {
+      "weaponId": "16",
+      "weaponName": "Repeater",
+      "weaponImgUrl": "/drawable/repeater.png"
+    },
+    {
+      "weaponId": "17",
+      "weaponName": "Bocek Bow",
+      "weaponImgUrl": "/drawable/bocek.png"
+    },
+    {
+      "weaponId": "18",
+      "weaponName": "Charge Rifle",
+      "weaponImgUrl": "/drawable/chargerifle.png"
+    },
+    {
+      "weaponId": "19",
+      "weaponName": "Longbow",
+      "weaponImgUrl": "/drawable/longbow.png"
+    },
+    {
+      "weaponId": "20",
+      "weaponName": "Kraber",
+      "weaponImgUrl": "/drawable/kraber.png"
+    },
+    {
+      "weaponId": "21",
+      "weaponName": "Sentinel",
+      "weaponImgUrl": "/drawable/sentinel.png"
+    },
+    {
+      "weaponId": "22",
+      "weaponName": "EVA-8",
+      "weaponImgUrl": "/drawable/eva.png"
+    },
+    {
+      "weaponId": "23",
+      "weaponName": "Mastiff",
+      "weaponImgUrl": "/drawable/mastiff.png"
+    },
+    {
+      "weaponId": "24",
+      "weaponName": "Mozambique",
+      "weaponImgUrl": "/drawable/mozambique.png"
+    },
+    {
+      "weaponId": "25",
+      "weaponName": "Peacekeeper",
+      "weaponImgUrl": "/drawable/peacekeeper.png"
+    },
+    {
+      "weaponId": "26",
+      "weaponName": "RE-45",
+      "weaponImgUrl": "/drawable/re45.png"
+    },
+    {
+      "weaponId": "27",
+      "weaponName": "P2020",
+      "weaponImgUrl": "/drawable/p2020.png"
+    },
+    {
+      "weaponId": "28",
+      "weaponName": "Wingman",
+      "weaponImgUrl": "/drawable/wingman.png"
+    }
+  ]
+}

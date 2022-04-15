@@ -42,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
         Model.initialize(this);
+        // Initializes the tables legend and weapon with the information in the assets folder
+        Database.insertLegends(this);
+        Database.insertWeapons(this);
     }
 
     @Override

@@ -80,7 +80,7 @@ public class SignupFragment extends Fragment{
             String username = usernameEditText.getText().toString();
             String password = passwordEditText.getText().toString();
             String confirmPassword = confirmPasswordEditText.getText().toString();
-
+            // Checks that fields are not empty
             if (TextUtils.isEmpty(password) || TextUtils.isEmpty(username) || TextUtils.isEmpty(confirmPassword) && password.equals(confirmPassword )){
                 Toast.makeText(getContext(), "Check your information", Toast.LENGTH_SHORT).show();
             } else {

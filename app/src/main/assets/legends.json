@@ -1,0 +1,104 @@
+{
+  "legends": [
+    {
+      "legendId": "1",
+      "legendName": "Bloodhound",
+      "legendImgUrl": "/drawable/bloodhound.png"
+    },
+    {
+      "legendId": "2",
+      "legendName": "Gibraltar",
+      "legendImgUrl": "/drawable/gibraltar.png"
+    },
+    {
+      "legendId": "3",
+      "legendName": "Lifeline",
+      "legendImgUrl": "/drawable/lifeline.png"
+    },
+    {
+      "legendId": "4",
+      "legendName": "Pathfinder",
+      "legendImgUrl": "/drawable/pathfinder.png"
+    },
+    {
+      "legendId": "5",
+      "legendName": "Wraith",
+      "legendImgUrl": "/drawable/wraith.png"
+    },
+    {
+      "legendId": "6",
+      "legendName": "Bangalore",
+      "legendImgUrl": "/drawable/bangalore.png"
+    },
+    {
+      "legendId": "7",
+      "legendName": "Caustic",
+      "legendImgUrl": "/drawable/caustic.png"
+    },
+    {
+      "legendId": "8",
+      "legendName": "Mirage",
+      "legendImgUrl": "/drawable/mirage.png"
+    },
+    {
+      "legendId": "9",
+      "legendName": "Octane",
+      "legendImgUrl": "/drawable/octane.png"
+    },
+    {
+      "legendId": "10",
+      "legendName": "Wattson",
+      "legendImgUrl": "/drawable/wattson.png"
+    },
+    {
+      "legendId": "11",
+      "legendName": "Crypto",
+      "legendImgUrl": "/drawable/crypto.png"
+    },
+    {
+      "legendId": "12",
+      "legendName": "Revenant",
+      "legendImgUrl": "/drawable/revenant.png"
+    },
+    {
+      "legendId": "13",
+      "legendName": "Loba",
+      "legendImgUrl": "/drawable/Loba.png"
+    },
+    {
+      "legendId": "14",
+      "legendName": "Rampart",
+      "legendImgUrl": "/drawable/rampart.png"
+    },
+    {
+      "legendId": "15",
+      "legendName": "Horizon",
+      "legendImgUrl": "/drawable/horizon.png"
+    },
+    {
+      "legendId": "16",
+      "legendName": "Fuse",
+      "legendImgUrl": "/drawable/fuse.png"
+    },
+    {
+      "legendId": "17",
+      "legendName": "Valkyrie",
+      "legendImgUrl": "/drawable/valkyrie.png"
+    },
+    {
+      "legendId": "18",
+      "legendName": "Seer",
+      "legendImgUrl": "/drawable/seer.png"
+    },
+    {
+      "legendId": "19",
+      "legendName": "Ash",
+      "legendImgUrl": "/drawable/Ash.png"
+    },
+    {
+      "legendId": "20",
+      "legendName": "Mad Maggie",
+      "legendImgUrl": "/drawable/mad_maggie.png"
+    }
+  ]
+}

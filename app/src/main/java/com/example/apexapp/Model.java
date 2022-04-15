@@ -7,6 +7,8 @@ import java.util.LinkedList;
 
 public abstract class Model {
     public static Activity activity;
+    static LinkedList<Legend> legends;
+    static LinkedList<Weapon> weapons;
 
     public static void initialize(Activity anActivity)
     {
