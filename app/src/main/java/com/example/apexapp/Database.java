@@ -22,8 +22,14 @@ public class Database{
         values.put("password", password);
         values.put("platform", "PC");
         // Insert the row
-        db.insert("t_user", null, values);
-        Toast.makeText(Model.activity, "User created", Toast.LENGTH_SHORT).show();
+        long result = db.insert("t_user", null, values);
+        // If results = -1 means that the user already exists
+        if (result < 0) {
+            Toast.makeText(Model.activity, "User already exists", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(Model.activity, "User created", Toast.LENGTH_SHORT).show();
+        }
+
 
     }
 
