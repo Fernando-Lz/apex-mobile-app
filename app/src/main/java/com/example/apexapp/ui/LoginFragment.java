@@ -1,10 +1,13 @@
 package com.example.apexapp.ui;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -12,18 +15,22 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.apexapp.Database;
+import com.example.apexapp.MainActivity;
+import com.example.apexapp.Model;
 import com.example.apexapp.R;
 
 public class LoginFragment extends Fragment{
     View view;
     //
     TextView signUpTextView;
-    EditText emailLoginEditText;
+    EditText usernameLoginEditText;
     EditText passwordLoginEditText;
     Button loginButton;
     Database db = new Database();
@@ -43,9 +50,10 @@ public class LoginFragment extends Fragment{
 
     private void initializeView(){
         signUpTextView = view.findViewById(R.id.signUpTextView);
-        emailLoginEditText = view.findViewById(R.id.usernameLoginEditText);
+        usernameLoginEditText = view.findViewById(R.id.usernameLoginEditText);
         passwordLoginEditText = view.findViewById(R.id.passwordLoginEditText);
         loginButton = view.findViewById(R.id.loginButton);
+        //
         //
         signUpSetOnClickListener(view);
         loginButtonSetOnClickListener(view);
@@ -74,20 +82,31 @@ public class LoginFragment extends Fragment{
             @Override
             public void onClick(View v) {
 
-                String email = emailLoginEditText.getText().toString();
+                String username = usernameLoginEditText.getText().toString();
                 String password = passwordLoginEditText.getText().toString();
-                if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)){
+                if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)){
                     Toast.makeText(getContext(), "Fill the form", Toast.LENGTH_SHORT).show();
                 }
 
-                db.userExists(email, password);
+                if (db.userExists(Model.activity, username, password)){
+                    Toast.makeText(getContext(), "Login Successful", Toast.LENGTH_SHORT).show();
+                    // Saves the data to manage the session
+                    SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPref.edit();
+                    editor.putString("username", username);
+                    editor.apply();
+                    // Redirects to home
+                    NavController navController;
+                    //
+                    navController = NavHostFragment.findNavController(LoginFragment.this);
+                    navController.navigate(R.id.action_login_to_nav_home);
+                } else {
+                    Toast.makeText(getContext(), "Wrong credentials", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
 
-    public void verifyCredentials() {
-
-    }
 
     @Override
     public void onDestroyView() {

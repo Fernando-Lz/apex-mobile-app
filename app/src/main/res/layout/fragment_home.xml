@@ -31,7 +31,7 @@
                 android:src="@drawable/apex_logo"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:contentDescription="Wingman Image"
+                android:contentDescription="Apex Legends Logo"
                 android:layout_marginRight="20dp">
             </ImageView>
 
@@ -42,17 +42,17 @@
                 android:gravity="center">
 
                 <TextView
+                    android:id="@+id/homeUsernameTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="StringentAbyss"
                     android:textColor="#FFF"
                     android:textSize="18sp">
                 </TextView>
 
                 <TextView
+                    android:id="@+id/homeUserLevel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Lv. 249"
                     android:textColor="#FFF"
                     android:textSize="18sp"
                     android:layout_marginBottom="20dp">
@@ -70,10 +70,10 @@
 
 
                 <ProgressBar
+                    android:id="@+id/homeProgressBar"
                     android:layout_width="match_parent"
                     android:layout_height="10dp"
                     style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                    android:progress="75"
                     >
                 </ProgressBar>
 
@@ -104,6 +104,7 @@
             android:gravity="center">
 
             <ImageView
+                android:id="@+id/homeBrRank"
                 android:src="@drawable/rank"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
@@ -141,6 +142,7 @@
             android:gravity="center">
 
             <ImageView
+                android:id="@+id/homeArenaRank"
                 android:src="@drawable/rank"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
@@ -178,6 +180,7 @@
             android:padding="16dp">
 
             <ImageView
+                android:id="@+id/homeLegendImg"
                 android:layout_width="200dp"
                 android:layout_height="match_parent"
                 android:contentDescription="Bloodhound image"
@@ -194,6 +197,7 @@
                 android:layout_marginLeft="60px">
 
                 <TextView
+                    android:id="@+id/homeStat1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Kills: 232"
@@ -201,6 +205,7 @@
                     android:textColor="@color/white">
                 </TextView>
                 <TextView
+                    android:id="@+id/homeStat2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Wins: 52"
@@ -208,6 +213,7 @@
                     android:textColor="@color/white">
                 </TextView>
                 <TextView
+                    android:id="@+id/homeStat3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Damage Done: 120000"

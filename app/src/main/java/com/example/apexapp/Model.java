@@ -21,15 +21,6 @@ public abstract class Model {
 
     }
 
-    public static LinkedList<Weapon> showWeapons() {
-
-    }
-
-    public static LinkedList<Legend> showLegends() {
-
-    }
-
-
     */
 
 }

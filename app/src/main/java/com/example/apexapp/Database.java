@@ -41,7 +41,34 @@ public class Database{
         }
     }
 
-    public void userExists(String username, String password){
+    public boolean userExists(Context context, String username, String password){
+        DatabaseHelper dbHelper;
+        SQLiteDatabase db;
+        ContentValues values;
+        Cursor cursor;
+        String table = "user";
+        String selection = "username = '" + username + "' AND password = '" + password + "';";
+        String sortOrder = "";
+        String[] selectionArgs = {};
+        String [] columns = {
+                "userId",
+                "username",
+                "password"
+        };
+        dbHelper = new DatabaseHelper(context);
+        // set the DB in read mode
+        db = dbHelper.getReadableDatabase();
+        cursor = db.query(table,    // The table to query
+                columns,                        // The array of columns to return (pass null to get all)
+                selection,                      // The columns for the WHERE clause
+                selectionArgs,                  // The values for the WHERE clause
+                null,                  // don't group the rows
+                null,                   // don't filter by row groups
+                sortOrder   );
+        //
+        if (cursor.getCount() > 0)
+            return true;
+        return false;
     }
 
 
