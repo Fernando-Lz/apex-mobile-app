@@ -1,6 +1,7 @@
 package com.example.apexapp.ui;
 
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import android.view.LayoutInflater;
@@ -16,14 +17,17 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.apexapp.Adapter;
+import com.example.apexapp.BuildConfig;
 import com.example.apexapp.Database;
 import com.example.apexapp.Legend;
 import com.example.apexapp.Model;
 import com.example.apexapp.R;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 
 public class LegendsFragment extends Fragment {
 
@@ -68,9 +72,14 @@ public class LegendsFragment extends Fragment {
         for (int i = 0; i < legendsList.size(); i++) {
             Legend currentLegend = legendsList.get(i);
             String legendName = currentLegend.getName();
-//            Integer.valueOf(("R.drawable." + legendName))
+            String legendImg = legendName.toLowerCase();
+            // Unique exception in legends names
+            if (legendName.equals("Mad Maggie"))
+                legendImg = "mad_maggie";
+            // Obtains the reference to the image
+            int image = getResources().getIdentifier(legendImg, "drawable", BuildConfig.APPLICATION_ID);
             legendNames.add(legendName);
-            legendImages.add(R.drawable.bloodhound);
+            legendImages.add(image);
         }
     }
 
