@@ -25,7 +25,9 @@ import com.android.volley.toolbox.Volley;
 import com.example.apexapp.Model;
 import com.example.apexapp.R;
 import com.example.apexapp.databinding.FragmentHomeBinding;
+import com.squareup.picasso.Picasso;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -38,9 +40,7 @@ public class HomeFragment extends Fragment {
     ImageView homeBrRank;
     ImageView homeArenaRank;
     ImageView homeLegendImg;
-    TextView homeStat1;
-    TextView homeStat2;
-    TextView homeStat3;
+    TextView homeStats[];
 
     @Override
     public View onCreateView(LayoutInflater inflater,
@@ -63,9 +63,7 @@ public class HomeFragment extends Fragment {
         homeBrRank = view.findViewById(R.id.homeBrRank);
         homeArenaRank = view.findViewById(R.id.homeArenaRank);
         homeLegendImg = view.findViewById(R.id.homeLegendImg);
-        homeStat1 = view.findViewById(R.id.homeStat1);
-        homeStat2 = view.findViewById(R.id.homeStat2);
-        homeStat3 = view.findViewById(R.id.homeStat3);
+        homeStats = new TextView[]{view.findViewById(R.id.homeStat1), view.findViewById(R.id.homeStat2), view.findViewById(R.id.homeStat3)};
         //
         SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
         String username = sharedPref.getString("username", "StringentAbyss");
@@ -81,13 +79,31 @@ public class HomeFragment extends Fragment {
             public void onResponse(String response) {
                 try {
                     JSONObject result = new JSONObject(response).getJSONObject("global");
+                    // BASIC STATS
                     String name = result.getString("name");
                     int level = result.getInt("level");
                     int progress = result.getInt("toNextLevelPercent");
-
                     homeUsernameTextView.setText(name);
                     homeUserLevel.setText("Lv. " + level);
                     homeProgressBar.setProgress(progress);
+
+                    //RANK STATS
+                    String rankBr = result.getJSONObject("rank").getString("rankImg");
+                    Picasso.get().load(rankBr).into(homeBrRank);
+                    String rankArena = result.getJSONObject("arena").getString("rankImg");
+                    Picasso.get().load(rankArena).into(homeArenaRank);
+
+                    //LAST LEGEND USED STATS
+                    JSONObject legendUsed = new JSONObject(response).getJSONObject("legends").getJSONObject("selected");
+                    String lastLegendImg = legendUsed.getJSONObject("ImgAssets").getString("icon");
+                    Picasso.get().load(lastLegendImg).into(homeLegendImg);
+
+                    JSONArray trackers = legendUsed.getJSONArray("data");
+                    for (int i = 0; i < trackers.length(); i++) {
+                        String trakcer_name = trackers.getJSONObject(i).getString("name");
+                        String trakcer_stat = trackers.getJSONObject(i).getString("value");
+                        homeStats[i].setText(trakcer_name + ": " + trakcer_stat);
+                    }
 
                 }catch (JSONException e){
                     Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_LONG).show();

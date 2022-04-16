@@ -105,7 +105,6 @@
 
             <ImageView
                 android:id="@+id/homeBrRank"
-                android:src="@drawable/rank"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:contentDescription="Rank image">
@@ -143,7 +142,6 @@
 
             <ImageView
                 android:id="@+id/homeArenaRank"
-                android:src="@drawable/rank"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:contentDescription="Rank image">
@@ -183,10 +181,9 @@
                 android:id="@+id/homeLegendImg"
                 android:layout_width="200dp"
                 android:layout_height="match_parent"
-                android:contentDescription="Bloodhound image"
+                android:contentDescription="Legend image"
                 android:layout_marginTop="-60px"
-                android:layout_marginLeft="-60px"
-                android:src="@drawable/bloodhound">
+                android:layout_marginLeft="-60px">
             </ImageView>
 
             <LinearLayout
@@ -200,7 +197,6 @@
                     android:id="@+id/homeStat1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Kills: 232"
                     android:textSize="18sp"
                     android:textColor="@color/white">
                 </TextView>
@@ -208,7 +204,6 @@
                     android:id="@+id/homeStat2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Wins: 52"
                     android:textSize="18sp"
                     android:textColor="@color/white">
                 </TextView>
@@ -216,7 +211,6 @@
                     android:id="@+id/homeStat3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Damage Done: 120000"
                     android:textSize="18sp"
                     android:textColor="@color/white">
                 </TextView>
