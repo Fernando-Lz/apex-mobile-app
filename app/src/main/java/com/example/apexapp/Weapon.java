@@ -25,4 +25,11 @@ public class Weapon {
     public String getImgUrl() {
         return imgUrl;
     }
+
+    public String toString() {
+        String string;
+        //
+        string = "(" + id + ", " + name + ", " + imgUrl + ").";
+        return string;
+    }
 }

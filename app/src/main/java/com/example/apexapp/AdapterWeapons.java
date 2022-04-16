@@ -6,37 +6,36 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
+public class AdapterWeapons extends RecyclerView.Adapter<AdapterWeapons.ViewHolder> {
 
     List<String> names;
     List<Integer> images;
     LayoutInflater inflater;
 
-    public Adapter(Context context, List<String> names, List<Integer> images){
+    public AdapterWeapons(Context context, List<String> names, List<Integer> images){
         this.names = names;
         this.images = images;
         this.inflater = LayoutInflater.from(context);
     }
 
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.legend_card_layout, parent,false);
+        View view = inflater.inflate(R.layout.weapon_card_layout, parent, false);
         return new ViewHolder(view);
     }
 
-
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.legendName.setText(names.get(position));
-        holder.legendImg.setImageResource(images.get(position));
+    public void onBindViewHolder(@NonNull AdapterWeapons.ViewHolder holder, int position) {
+        holder.weaponName.setText(names.get(position));
+        holder.weaponImg.setImageResource(images.get(position));
     }
 
     @Override
@@ -45,20 +44,13 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView legendName;
-        ImageView legendImg;
+        TextView weaponName;
+        ImageView weaponImg;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            legendName = itemView.findViewById(R.id.TextViewLegend);
-            legendImg = itemView.findViewById(R.id.ImageViewLegend);
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(v.getContext(), "Clicked -> " + getAdapterPosition(), Toast.LENGTH_SHORT).show();
-                }
-            });
+            weaponName = itemView.findViewById(R.id.TextViewWeapon);
+            weaponImg = itemView.findViewById(R.id.ImageViewWeapon);
         }
     }
 }

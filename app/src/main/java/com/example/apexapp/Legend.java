@@ -27,8 +27,7 @@ public class Legend {
     }
 
 
-    public String toString()
-    {
+    public String toString() {
         String string;
         //
         string = "(" + id + ", " + name + ", " + imgUrl + ").";

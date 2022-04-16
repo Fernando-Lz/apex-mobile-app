@@ -98,6 +98,59 @@ public class Database{
         return result;
     }
 
+    public static LinkedList<Weapon> selectAllWeapons(Context context){
+        LinkedList<Weapon> result;
+        DatabaseHelper dbHelper;
+        SQLiteDatabase db;
+        Cursor cursor;
+        //
+        Weapon weapon;
+        int weaponId;
+        String weaponName;
+        String weaponImgUrl;
+        //
+        String table = "weapon";
+        String selection = "";
+        String sortOrder = "weaponId ASC";
+        String[] selectionArgs = {};
+        String [] columns = {
+                "weaponId",
+                "weaponName",
+                "weaponImgUrl"
+        };
+        //
+        dbHelper = new DatabaseHelper(context);
+        // set the DB in read mode
+        db = dbHelper.getReadableDatabase();
+
+        //make the query and obtain the result list (cursor)
+        cursor = db.query(
+                table,    // The table to query
+                columns,                        // The array of columns to return (pass null to get all)
+                selection,                      // The columns for the WHERE clause
+                selectionArgs,                  // The values for the WHERE clause
+                null,                  // don't group the rows
+                null,                   // don't filter by row groups
+                sortOrder                       // The sort order
+        );
+
+        result = new LinkedList<Weapon>();
+
+        // adds each row to the list
+        while(cursor.moveToNext())
+        {
+            weaponId = cursor.getInt(cursor.getColumnIndexOrThrow("weaponId"));
+            weaponName = cursor.getString(cursor.getColumnIndexOrThrow("weaponName"));
+            weaponImgUrl = cursor.getString(cursor.getColumnIndexOrThrow("weaponImgUrl"));
+            weapon = new Weapon(weaponId, weaponName, weaponImgUrl);
+            result.add(weapon);
+        }
+
+        // close the cursor
+        cursor.close();
+        return result;
+    }
+
 
     // The methods below are used when the application starts, they use the json files in the assets folder
     public static void insertLegends(Context context) {

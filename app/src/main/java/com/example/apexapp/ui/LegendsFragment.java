@@ -1,7 +1,6 @@
 package com.example.apexapp.ui;
 
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import android.view.LayoutInflater;
@@ -16,29 +15,26 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.apexapp.Adapter;
+import com.example.apexapp.AdapterLegends;
 import com.example.apexapp.BuildConfig;
 import com.example.apexapp.Database;
 import com.example.apexapp.Legend;
 import com.example.apexapp.Model;
 import com.example.apexapp.R;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Locale;
 
 public class LegendsFragment extends Fragment {
 
     View view;
     RecyclerView legendsRecyclerView;
-    Adapter adapter;
+    AdapterLegends adapter;
     //
     LinkedList<Legend> legendsList;
     List<String> legendNames;
     List<Integer> legendImages;
-    int[] arr;
 
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -59,12 +55,9 @@ public class LegendsFragment extends Fragment {
         legendsList = Database.selectAllLegends(Model.activity);
         legendNames = new ArrayList<>();
         legendImages = new ArrayList<>();
-        // Creates a component where items can be created in a two columns grid
+        // Saves the references of the legends images and the names of the legends to display them
         saveLegendsInfo();
-        adapter = new Adapter(Model.activity, legendNames, legendImages);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(Model.activity, 2, GridLayoutManager.VERTICAL, false);
-        legendsRecyclerView.setLayoutManager(gridLayoutManager);
-        legendsRecyclerView.setAdapter(adapter);
+        adapter = new AdapterLegends(Model.activity, legendNames, legendImages);
         showAllLegends();
     }
 
@@ -84,7 +77,10 @@ public class LegendsFragment extends Fragment {
     }
 
     public void showAllLegends(){
-
+        // Creates a component where items can be created in a two columns grid
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(Model.activity, 2, GridLayoutManager.VERTICAL, false);
+        legendsRecyclerView.setLayoutManager(gridLayoutManager);
+        legendsRecyclerView.setAdapter(adapter);
     }
 
 
@@ -94,9 +90,4 @@ public class LegendsFragment extends Fragment {
         super.onDestroyView();
     }
 
-    // Creates the card
-
-    public void createLegendCard(String legendName) {
-
-    }
 }

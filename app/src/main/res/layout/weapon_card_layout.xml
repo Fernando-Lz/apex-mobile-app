@@ -7,17 +7,16 @@
     android:tag="cards main container">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/CardViewLegend"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
+        android:id="@+id/CardViewWeapon"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
         app:cardCornerRadius="12dp"
-        android:layout_margin="15dp"
+        android:layout_margin="12dp"
         app:cardBackgroundColor="@color/white"
-        android:gravity="center"
         >
 
         <LinearLayout
-            android:id="@+id/LinearLayoutLegend"
+            android:id="@+id/LinearLayoutWeapon"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -25,15 +24,14 @@
             android:gravity="center">
 
             <ImageView
-                android:id="@+id/ImageViewLegend"
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:layout_marginTop="-20px"
+                android:id="@+id/ImageViewWeapon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 >
             </ImageView>
 
             <TextView
-                android:id="@+id/TextViewLegend"
+                android:id="@+id/TextViewWeapon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
