@@ -2,7 +2,9 @@ package com.example.apexapp;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.provider.BaseColumns;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -11,6 +13,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.LinkedList;
 
 public class Database{
     // Creates the database instance
@@ -41,6 +44,62 @@ public class Database{
     public void userExists(String username, String password){
     }
 
+
+    public static LinkedList<Legend> selectAllLegends(Context context){
+        LinkedList<Legend> result;
+        DatabaseHelper dbHelper;
+        SQLiteDatabase db;
+        Cursor cursor;
+        //
+        Legend legend;
+        int legendId;
+        String legendName;
+        String legendImgUrl;
+        //
+        String table = "legend";
+        String selection = "";
+        String sortOrder = "legendId ASC";
+        String[] selectionArgs = {};
+        String [] columns = {
+                "legendId",
+                "legendName",
+                "legendImgUrl"
+        };
+        //
+        dbHelper = new DatabaseHelper(context);
+        // set the DB in read mode
+        db = dbHelper.getReadableDatabase();
+
+        //make the query and obtain the result list (cursor)
+        cursor = db.query(
+                table,    // The table to query
+                columns,                        // The array of columns to return (pass null to get all)
+                selection,                      // The columns for the WHERE clause
+                selectionArgs,                  // The values for the WHERE clause
+                null,                  // don't group the rows
+                null,                   // don't filter by row groups
+                sortOrder                       // The sort order
+        );
+
+        result = new LinkedList<Legend>();
+
+        // adds each row to the list
+        while(cursor.moveToNext())
+        {
+            legendId = cursor.getInt(cursor.getColumnIndexOrThrow("legendId"));
+            legendName = cursor.getString(cursor.getColumnIndexOrThrow("legendName"));
+            legendImgUrl = cursor.getString(cursor.getColumnIndexOrThrow("legendImgUrl"));
+            legend = new Legend(legendId, legendName, legendImgUrl);
+            result.add(legend);
+        }
+
+        // close the cursor
+        cursor.close();
+        return result;
+    }
+
+
+    // The methods below are used when the application starts, they use the json files in the assets folder
     public static void insertLegends(Context context) {
         DatabaseHelper dbHelper;
         SQLiteDatabase db;

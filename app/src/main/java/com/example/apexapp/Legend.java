@@ -26,16 +26,12 @@ public class Legend {
         return imgUrl;
     }
 
-    // Setters
-    public void setId(int id) {
-        this.id = id;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setImgUrl(String imgUrl) {
-        this.imgUrl = imgUrl;
+    public String toString()
+    {
+        String string;
+        //
+        string = "(" + id + ", " + name + ", " + imgUrl + ").";
+        return string;
     }
 }
