@@ -30,6 +30,8 @@ import java.util.List;
 public class WeaponsFragment extends Fragment {
 
     View view;
+    // Recycler is a class that allows putting in the ui the same XML multiple times, with some
+    // variations
     RecyclerView weaponsRecyclerView;
     AdapterWeapons adapter;
     //
@@ -53,11 +55,13 @@ public class WeaponsFragment extends Fragment {
     private void initializeView() {
         //
         weaponsRecyclerView = view.findViewById(R.id.weaponsRecyclerView);
+        // Retrieves the weapons from the db
         weaponsList = Database.selectAllWeapons(Model.activity);
         weaponNames = new ArrayList<>();
         weaponImages = new ArrayList<>();
-        // Saves the references of the legends images and the names of the legends to display them
+        // Saves the references of the weapons images and the names of the legends to display them
         saveLegendsInfo();
+        // Creates the adapter
         adapter = new AdapterWeapons(Model.activity, weaponNames, weaponImages);
         showAllWeapons();
     }
@@ -79,9 +83,11 @@ public class WeaponsFragment extends Fragment {
     }
 
     public void showAllWeapons() {
-        // Creates a component where items can be created in a two columns grid
+        // Creates a layout where legend cards will be created in a two columns grid
         GridLayoutManager gridLayoutManager = new GridLayoutManager(Model.activity, 2, GridLayoutManager.VERTICAL, false);
+        // Sets the layout
         weaponsRecyclerView.setLayoutManager(gridLayoutManager);
+        // Sets the adapter (provides the cards on demand, in this case based on the list of legends)
         weaponsRecyclerView.setAdapter(adapter);
     }
 

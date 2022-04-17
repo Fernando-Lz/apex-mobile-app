@@ -65,10 +65,33 @@ public class Database{
                 null,                  // don't group the rows
                 null,                   // don't filter by row groups
                 sortOrder   );
-        //
+        // If result >1 means that the user already exists
         if (cursor.getCount() > 0)
             return true;
         return false;
+    }
+
+    public static void saveStats(Context context, String username, int level, String arenaRank, String battleRoyaleRank){
+        DatabaseHelper dbHelper;
+        SQLiteDatabase db;
+        ContentValues values;
+        //
+        dbHelper = new DatabaseHelper(context);
+        // DB in write mode
+        db = dbHelper.getWritableDatabase();
+        //
+        values = new ContentValues();
+        values.put("level", level);
+        values.put("arenaRank", arenaRank);
+        values.put("battleRoyaleRank", battleRoyaleRank);
+        // Insert the row
+        long result = db.update("user", values, "username = '" + username + "'", null);
+        // If result>1 means that the user information was updated
+        if (result > 0) {
+            Toast.makeText(Model.activity, "User information updated", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(Model.activity, "User could not be created", Toast.LENGTH_SHORT).show();
+        }
     }
 
 
@@ -110,7 +133,7 @@ public class Database{
 
         result = new LinkedList<Legend>();
 
-        // adds each row to the list
+        // adds each row to the list of Legends
         while(cursor.moveToNext())
         {
             legendId = cursor.getInt(cursor.getColumnIndexOrThrow("legendId"));
@@ -163,7 +186,7 @@ public class Database{
 
         result = new LinkedList<Weapon>();
 
-        // adds each row to the list
+        // adds each row to the list of Weapons
         while(cursor.moveToNext())
         {
             weaponId = cursor.getInt(cursor.getColumnIndexOrThrow("weaponId"));
@@ -180,6 +203,7 @@ public class Database{
 
 
     // The methods below are used when the application starts, they use the json files in the assets folder
+    // and the loadFromJSONAsset method.
     public static void insertLegends(Context context) {
         DatabaseHelper dbHelper;
         SQLiteDatabase db;
@@ -192,11 +216,12 @@ public class Database{
             JSONObject obj = new JSONObject(loadJSONFromAsset("legends"));
             JSONArray jsonArray = obj.getJSONArray("legends");
 
+            // Reads the JSONArray and inserts each legend in the array to the db
             for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject jo_inside = jsonArray.getJSONObject(i);
-                String legendId = jo_inside.getString("legendId");
-                String legendName = jo_inside.getString("legendName");
-                String legendImgUrl = jo_inside.getString("legendImgUrl");
+                JSONObject legend = jsonArray.getJSONObject(i);
+                String legendId = legend.getString("legendId");
+                String legendName = legend.getString("legendName");
+                String legendImgUrl = legend.getString("legendImgUrl");
 
                 values = new ContentValues();
                 values.put("legendId", legendId);
@@ -222,11 +247,12 @@ public class Database{
             JSONObject obj = new JSONObject(loadJSONFromAsset("weapons"));
             JSONArray jsonArray = obj.getJSONArray("weapons");
 
+            // Reads the JSONArray and inserts each weapon in the array to the db
             for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject jo_inside = jsonArray.getJSONObject(i);
-                String weaponId = jo_inside.getString("weaponId");
-                String weaponName = jo_inside.getString("weaponName");
-                String weaponImgUrl = jo_inside.getString("weaponImgUrl");
+                JSONObject weapon = jsonArray.getJSONObject(i);
+                String weaponId = weapon.getString("weaponId");
+                String weaponName = weapon.getString("weaponName");
+                String weaponImgUrl = weapon.getString("weaponImgUrl");
 
                 values = new ContentValues();
                 values.put("weaponId", weaponId);
@@ -243,7 +269,7 @@ public class Database{
 
     // Reads the json file in the assets folder and converts it into a string
     public static String loadJSONFromAsset(String filename) {
-        String json = null;
+        String json;
         try {
             InputStream is = Model.activity.getAssets().open(filename + ".json");
             int size = is.available();

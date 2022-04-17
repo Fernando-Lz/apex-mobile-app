@@ -17,9 +17,5 @@
             android:id="@+id/nav_weapons"
             android:icon="@drawable/weapons"
             android:title="@string/menu_weapons" />
-        <item
-            android:id="@+id/logout"
-            android:icon="@drawable/logout"
-            android:title="@string/menu_logout" />
     </group>
 </menu>

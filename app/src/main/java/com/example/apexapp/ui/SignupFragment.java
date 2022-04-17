@@ -58,7 +58,7 @@ public class SignupFragment extends Fragment{
 
     // Listeners
 
-    //Moves the user to the login fragment
+    //Moves the user to the login fragment when clicking the "Already have an account ?..." text
     private void loginSetOnClickListener(View view){
         loginTextView = view.findViewById(R.id.loginTextView);
         loginTextView.setOnClickListener(new View.OnClickListener() {
@@ -80,14 +80,14 @@ public class SignupFragment extends Fragment{
             String username = usernameEditText.getText().toString();
             String password = passwordEditText.getText().toString();
             String confirmPassword = confirmPasswordEditText.getText().toString();
-            // Checks that fields are not empty
+            // Checks that fields are not empty, if they are send a notification
             if (TextUtils.isEmpty(password) || TextUtils.isEmpty(username) || TextUtils.isEmpty(confirmPassword) && password.equals(confirmPassword )){
                 Toast.makeText(getContext(), "Check your information", Toast.LENGTH_SHORT).show();
             } else {
+                // Register the user to the database
                 Database.registerUser(Model.activity, username, password);
                 // Move to login fragment
                 NavController navController;
-                //
                 navController = NavHostFragment.findNavController(SignupFragment.this);
                 navController.navigate(R.id.action_signup_to_login);
             }

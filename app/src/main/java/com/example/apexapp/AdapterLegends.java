@@ -24,6 +24,7 @@ public class AdapterLegends extends RecyclerView.Adapter<AdapterLegends.ViewHold
         this.inflater = LayoutInflater.from(context);
     }
 
+    // Inflates the card of the correspondent legend
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -31,9 +32,9 @@ public class AdapterLegends extends RecyclerView.Adapter<AdapterLegends.ViewHold
         return new ViewHolder(view);
     }
 
-
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        // Sets the name and img of the card component based on the current legend of the iteration
         holder.legendName.setText(names.get(position));
         holder.legendImg.setImageResource(images.get(position));
     }
@@ -47,6 +48,7 @@ public class AdapterLegends extends RecyclerView.Adapter<AdapterLegends.ViewHold
         TextView legendName;
         ImageView legendImg;
 
+        // Selects the id of the item that will change in the card component
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             legendName = itemView.findViewById(R.id.TextViewLegend);

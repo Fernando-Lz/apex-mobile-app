@@ -61,7 +61,7 @@ public class LoginFragment extends Fragment{
 
     // Listeners
 
-    //Moves the user to the signup fragment
+    //Moves the user to the signup fragment when clicks the "New user?... text"
     private void signUpSetOnClickListener(View view){
         signUpTextView = view.findViewById(R.id.signUpTextView);
         signUpTextView.setOnClickListener(new View.OnClickListener() {
@@ -71,33 +71,33 @@ public class LoginFragment extends Fragment{
                 //
                 navController = NavHostFragment.findNavController(LoginFragment.this);
                 navController.navigate(R.id.action_login_to_signup);
-
             }
         });
     }
 
+    // Verifies that the user exists in the database and moves it to the home fragment
     private void loginButtonSetOnClickListener(View view){
         loginButton = view.findViewById(R.id.loginButton);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 String username = usernameLoginEditText.getText().toString();
                 String password = passwordLoginEditText.getText().toString();
+
                 if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)){
+                    // Sends a notification to tell the user the data is incomplete
                     Toast.makeText(getContext(), "Fill the form", Toast.LENGTH_SHORT).show();
                 }
 
                 if (db.userExists(Model.activity, username, password)){
                     Toast.makeText(getContext(), "Login Successful", Toast.LENGTH_SHORT).show();
-                    // Saves the data to manage the session
+                    // Saves the name of the user in local storage to use it in the Home fragment
                     SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPref.edit();
                     editor.putString("username", username);
                     editor.apply();
                     // Redirects to home
                     NavController navController;
-                    //
                     navController = NavHostFragment.findNavController(LoginFragment.this);
                     navController.navigate(R.id.action_login_to_nav_home);
                 } else {

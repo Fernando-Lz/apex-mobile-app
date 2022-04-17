@@ -33,6 +33,8 @@ import java.util.List;
 public class LegendsFragment extends Fragment {
 
     View view;
+    // Recycler is a class that allows putting in the ui the same XML multiple times, with some
+    // variations
     RecyclerView legendsRecyclerView;
     AdapterLegends adapter;
     //
@@ -56,11 +58,13 @@ public class LegendsFragment extends Fragment {
     private void initializeView() {
         //
         legendsRecyclerView = view.findViewById(R.id.legendsRecyclerView);
+        // Retrieves the legends from the db
         legendsList = Database.selectAllLegends(Model.activity);
         legendNames = new ArrayList<>();
         legendImages = new ArrayList<>();
         // Saves the references of the legends images and the names of the legends to display them
         saveLegendsInfo();
+        // Creates the adapter
         adapter = new AdapterLegends(Model.activity, legendNames, legendImages);
         showAllLegends();
     }
@@ -81,9 +85,11 @@ public class LegendsFragment extends Fragment {
     }
 
     public void showAllLegends(){
-        // Creates a component where items can be created in a two columns grid
+        // Creates a layout where legend cards will be created in a two columns grid
         GridLayoutManager gridLayoutManager = new GridLayoutManager(Model.activity, 2, GridLayoutManager.VERTICAL, false);
+        // Sets the layout
         legendsRecyclerView.setLayoutManager(gridLayoutManager);
+        // Sets the adapter (provides the cards on demand, in this case based on the list of legends)
         legendsRecyclerView.setAdapter(adapter);
     }
 
